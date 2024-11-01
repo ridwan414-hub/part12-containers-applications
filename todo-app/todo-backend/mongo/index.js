@@ -3,7 +3,7 @@ const Todo = require('./models/Todo')
 const { MONGO_URL } = require('../util/config')
 
 if (MONGO_URL && !mongoose.connection.readyState) {
-  console.log('Connecting to MongoDB:', MONGO_URL)
+  console.log('Connecting to MongoDB....')
   mongoose.connect(MONGO_URL, {
     useNewUrlParser: true, useUnifiedTopology: true
   })
