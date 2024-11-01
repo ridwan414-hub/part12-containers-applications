@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const TodoForm = ({ createTodo }) => {
-  const [text, setText] = useState('')
+  const [text, setText] = React.useState('')
 
   const onChange = ({ target }) => {
     setText(target.value)
@@ -20,4 +21,8 @@ const TodoForm = ({ createTodo }) => {
   )
 }
 
-export default TodoForm
+TodoForm.propTypes = {
+  createTodo: PropTypes.func.isRequired,
+};
+
+export default TodoForm;
