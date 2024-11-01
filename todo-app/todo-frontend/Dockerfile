@@ -1,12 +1,12 @@
 # Build stage for testing
-FROM node:20-alpine AS test-stage
+FROM node:20 AS test-stage
 WORKDIR /usr/src/app
 COPY . .
 RUN npm ci
 RUN npm run test:ci
 
 # Build stage
-FROM node:20-alpine AS build-stage 
+FROM node:20 AS build-stage 
 WORKDIR /usr/src/app
 COPY . .
 RUN npm ci
